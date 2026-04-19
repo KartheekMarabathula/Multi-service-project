@@ -22,3 +22,4 @@ build/
 *.tar
 
 # Kubernetes secrets (optional safety)
+deploy/argocd/git-credentials.yml
