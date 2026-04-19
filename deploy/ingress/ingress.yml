@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: multi-service-ingress
+  namespace: multi-service
+spec:
+  rules:
+  - http:
+      paths:
+
+      - path: /users
+        pathType: Prefix
+        backend:
+          service:
+            name: user-service
+            port:
+              number: 3000
+
+      - path: /products
+        pathType: Prefix
+        backend:
+          service:
+            name: product-service
+            port:
+              number: 3001
+
+      - path: /orders
+        pathType: Prefix
+        backend:
+          service:
+            name: order-service
+            port:
+              number: 3002

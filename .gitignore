@@ -1,0 +1,24 @@
+# Node modules
+node_modules/
+
+# Env files
+.env
+.env.*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+
+# Docker
+*.tar
+
+# Kubernetes secrets (optional safety)
