@@ -1,23 +1,23 @@
 name: User Service CI
-
 on:
   push:
-    paths:
-      - 'user-service/**'
+    branches:
+      - main
+    # Add your path back once you confirm the name is 100% correct
+    # paths:
+    #   - 'user-service/**' 
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Build Image
-        run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/user-service:${{ github.sha }} ./user-service
+      - uses: actions/checkout@v4 # Updated to v4
 
       - name: Login DockerHub
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-      - name: Push Image
-        run: docker push ${{ secrets.DOCKER_USER }}/user-service:${{ github.sha }}
+      - name: Build and Push
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/user-service:${{ github.sha }} ./user-service
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/user-service:${{ github.sha }}
+
