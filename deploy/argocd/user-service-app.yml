@@ -7,12 +7,12 @@ metadata:
   annotations:
     # 🔥 Image updater config
     argocd-image-updater.argoproj.io/image-list: user-service=karthiq18/user-service
-    argocd-image-updater.argoproj.io/user-service.update-strategy: latest
+    argocd-image-updater.argoproj.io/user-service.update-strategy: newest-build
 
     # 🔥 Git write-back
     argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/git-branch: main
-    argocd-image-updater.argoproj.io/git-credentials: secret:argocd/image-updater/git-creds
+    argocd-image-updater.argoproj.io/git-credentials: secret:argocd/git-creds
 
 spec:
   project: default
