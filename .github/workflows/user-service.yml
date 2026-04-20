@@ -14,10 +14,10 @@ jobs:
 
       - name: Build Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USER }}/user-service:${{ github.sha }} ./user-service
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/user-service:${{ github.sha }} ./user-service
 
       - name: Login DockerHub
-        run: echo "${{ secrets.DOCKER_PASS }}" | docker login -u "${{ secrets.DOCKER_USER }}" --password-stdin
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
       - name: Push Image
         run: docker push ${{ secrets.DOCKER_USER }}/user-service:${{ github.sha }}
