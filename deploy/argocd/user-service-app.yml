@@ -11,6 +11,8 @@ spec:
     targetRevision: main
     path: deploy/user-service
 
+    kustomize: {}
+
   destination:
     server: https://kubernetes.default.svc
     namespace: multi-service
