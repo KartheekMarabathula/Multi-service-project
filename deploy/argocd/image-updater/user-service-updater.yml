@@ -3,21 +3,19 @@ kind: ImageUpdater
 metadata:
   name: user-service-updater
   namespace: argocd
-spec:
-  # Interval cannot be set in the CRD; it must be set in the global ConfigMap.
-  writeBackConfig:
-    method: git
-    gitConfig:
-      # These were rejected because they are not valid fields in the CRD schema.
-      # Authentication and user details are handled via the global ConfigMap
-      # or by the 'secret' prefix in the repository URL/annotation.
-      branch: main
 
+spec:
   applicationRefs:
     - namePattern: "user-service"
-      # Move 'updateStrategy' into 'commonUpdateSettings'
-      commonUpdateSettings:
-        updateStrategy: newest-build
+
       images:
         - alias: "user-service"
           imageName: "karthiq18/user-service"
+
+      commonUpdateSettings:
+        updateStrategy: newest-build
+
+  writeBackConfig:
+    method: git
+    gitConfig:
+      branch: main
