@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: karthiq18/user-service:v1.0.0
+        image: karthiq18/user-service:newest-build
         ports:
           - containerPort: 3000
         env:
