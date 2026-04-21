@@ -19,3 +19,5 @@ spec:
     method: git
     gitConfig:
       branch: main
+      secretRef:
+        name: git-creds
