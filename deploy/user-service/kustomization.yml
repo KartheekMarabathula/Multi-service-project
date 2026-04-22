@@ -7,6 +7,7 @@ resources:
   - k8s/user-service.yml
   - k8s/mysql-deployment.yml
   - k8s/mysql-service.yml
+  - k8s/pvc.yml
   - k8s/configmap.yml
   - k8s/secrets.yml
 
