@@ -4,8 +4,11 @@ on:
     branches:
       - main
     # Add your path back once you confirm the name is 100% correct
-    # paths:
-    #   - 'user-service/**' 
+    paths:
+    - 'user-service/**' 
+    paths-ignore:
+    - 'deploy/**'      # IGNORE when ArgoCD updates the manifest
+    
 
 jobs:
   build:

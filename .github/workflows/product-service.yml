@@ -6,6 +6,9 @@ on:
     # Add your path back once you confirm the name is 100% correct
     paths:
     - 'services/product-service/**' 
+    paths-ignore:
+    - 'deploy/**'      # IGNORE when ArgoCD updates the manifest
+     
 
 jobs:
   build:
