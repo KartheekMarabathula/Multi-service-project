@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/health", (req, res) => {
-  res.send("Hello, I am Healthy");
+  res.send("HI, I am Healthy");
 });
 
 app.get("/users", async (req, res) => {

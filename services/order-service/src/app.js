@@ -29,6 +29,6 @@ app.get("/orders", async (req, res) => {
   res.json(rows);
 });
 
-app.get("/health", (req, res) => res.send("Hello, I am Healthy"));
+app.get("/health", (req, res) => res.send("HI, I am Healthy"));
 
 module.exports = app;
