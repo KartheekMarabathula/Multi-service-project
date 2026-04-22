@@ -1,3 +1,3 @@
 kustomize:
   images:
-  - karthiq18/user-service:77bc03d1ca937229e641facb89a22cd9c8dbf4ee
+  - karthiq18/user-service:86f7a4d6db7d9b57579b3c2d5370fab207dfe94f
