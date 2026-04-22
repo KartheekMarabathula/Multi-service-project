@@ -12,6 +12,6 @@ app.get("/products", async (req, res) => {
   }
 });
 
-app.get("/health", (req, res) => res.send("OK"));
+app.get("/health", (req, res) => res.send("Hello, I am Healthy"));
 
 module.exports = app;
