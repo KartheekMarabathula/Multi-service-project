@@ -1,0 +1,21 @@
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: order-service-updater
+  namespace: argocd
+
+spec:
+  applicationRefs:
+    - namePattern: "order-service"
+
+      images:
+        - alias: "order-service"
+          imageName: "karthiq18/order-service"
+
+      commonUpdateSettings:
+        updateStrategy: newest-build
+
+  writeBackConfig:
+    method: git
+    gitConfig:
+      branch: main

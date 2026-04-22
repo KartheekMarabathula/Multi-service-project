@@ -1,0 +1,21 @@
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: product-service-updater
+  namespace: argocd
+
+spec:
+  applicationRefs:
+    - namePattern: "product-service"
+
+      images:
+        - alias: "product-service"
+          imageName: "karthiq18/product-service"
+
+      commonUpdateSettings:
+        updateStrategy: newest-build
+
+  writeBackConfig:
+    method: git
+    gitConfig:
+      branch: main

@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: product-service
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/KartheekMarabathula/Multi-service-project.git
+    targetRevision: main
+    path: deploy/product-service
+
+    kustomize: {}
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: multi-service
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
