@@ -6,7 +6,7 @@ resources:
   - k8s/user-deployment.yml
   - k8s/user-service.yml
   - k8s/configmap.yml
-  - k8s/secret.yml
+  - k8s/secrets.yml
 
 images:
   - name: karthiq18/user-service
