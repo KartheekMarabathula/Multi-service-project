@@ -5,7 +5,7 @@ on:
       - main
     # Add your path back once you confirm the name is 100% correct
     paths:
-    - 'product-service/**' 
+    - 'services/product-service/**' 
 
 jobs:
   build:
