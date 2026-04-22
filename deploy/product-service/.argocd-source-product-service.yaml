@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - karthiq18/product-service:abe38a8704d6910b0244f105a55c662649c61ac5
